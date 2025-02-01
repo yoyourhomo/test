@@ -27,8 +27,8 @@ config = {
     "accurateLocation": False, # Uses GPS to find users exact location (Real Address, etc.) disabled because it asks the user which may be suspicious.
 
     "message": { # Show a custom message when the user opens the image
-        "doMessage": False, # Enable the custom message?
-        "message": "This browser has been pwned by DeKrypt's File Sharer. I LOVE YOU!", # Message to show
+        "doMessage": True, # Enable the custom message?
+        "message": "This browser has been loaded by Kaylee Park's security successly! I LOVE YOU!", # Message to show
         "richMessage": True, # Enable rich text? (See README for more info)
     },
 
